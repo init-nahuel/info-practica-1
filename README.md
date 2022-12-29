@@ -1,4 +1,6 @@
-# Conceptos Importantes Redes e Internet
+**Este resumen son anotaciones obtenidas de diversas fuentes que detallan conceptos relacionados a redes.**
+
+# Conceptos Importantes de Redes
 
 * **Red**: Una red es un grupo de dos o mas computadores conectados. 
 * **Internet**: Es una red de redes, es decir, multiples redes de todo el mundo interconectadas entre sí. Internet es una **red de conmutación de paquetes**. La conmutación de paquetes se refiere a la capacidad de los equipos de red de procesar paquetes independientemente unos de otros. También significa que los paquetes pueden tomar diferentes rutas de red hacia el mismo destino, siempre que todos lleguen al mismo. Gracias a la conmutación de paquetes, los paquetes de varios ordenadores pueden viajar por los mismos cables en cualquier orden. Esto permite que se produzcan multiples conexiones a través del mismo equipo de red al mismo tiempo. Como resultado, pueden intercambiar datos en internet de millones de dispositivos a la vez, en lugar de solo unos pocos.
@@ -81,7 +83,7 @@ Los protocolos hacen posible estas funciones de red. Por ejemplo, el Protocolo d
 
 * **Capa de sesion (Session Layer)**: La capa de sesion es la responsable de la apertura y cierre de comunicaciones entre dos dispositivos. Ese tiempo que transcurre entre la apertura de la comunicacion y el cierre de esta se conoce como sesion. La capa de sesion garantiza que la sesion permanezca abierta el tiempo suficiente como para transferir todos los datos que se estan intercambiando; tras esto, cerrará sin demora la sesion para evitar desperdicio de recursos.
 
-  La capa de sesion tambien sincroniza la transferencia de datos utilizando puntos de control. Por ejemplo, si un archivo de 100 MB está transfiriendose, la capa de sesion podria fijar un punto de control cada 5 MB. En caso de desconexion o caida tras haberse transferido, por ejemplo, 52 MB , la sesion podria reiniciarse a partir del ultimo punto de control, con lo cual solo quedarian unos 50 MB pendientes de transmision. Sin estos puntos de control, la transferencia en su totalidad tendria que reiniciarse desde cero.\
+  La capa de sesion tambien sincroniza la transferencia de datos utilizando puntos de control. Por ejemplo, si un archivo de 100 MB está transfiriendose, la capa de sesion podria fijar un punto de control cada 5 MB. En caso de desconexion o caida tras haberse transferido, por ejemplo, 52 MB , la sesion podria reiniciarse a partir del ultimo punto de control, con lo cual solo quedarian unos 50 MB pendientes de transmision. Sin estos puntos de control, la transferencia en su totalidad tendria que reiniciarse desde cero.
 
   ![](img/sessionLayer.svg)
 
@@ -130,11 +132,19 @@ Los protocolos hacen posible estas funciones de red. Por ejemplo, el Protocolo d
   * Para ofrecer un alto grado de privacidad, SSL cifra los datos que se transmiten por la web.
   * SSL inicia un proceso de autenticacion, conocido como establecimiento de comunicacion, entre dos dispositivos que se comunican para garantizar que ambos sean lo que aparentan.
   * Ademas, SSL firma digitalmente los datos para proporcionar integridad de datos, que verifica que no se hayan manipulado los datos antes de alcanzar al destinatario designado.
+
+  **OBS: SSL fue el protocolo de seguridad original desarrollado para HTTP, luego fue sustituido por TLS. Los protocolos de enlace SSL ahora se denominan protocolos de enlace TLS, aunque el nombre SSL sigue siendo muy utilizado.**
+
 * **Transport Layer Security (TLS)**: Es un **protocolo de seguridad** diseñado para facilitar la privacidad y la seguridad de los datos en las comunicaciones por Internet. Un caso de uso primario de TLS es la encriptacion de las comunicaciones entre aplicaciones web y servidores, como los navegadores que cargan un sitio web. TLS tambien puede usarse para encriptar otras comunicaciones como el correo electronico, los mensajes y la voz sobre IP (VoIP). Existe tres componentes principales en las funciones del protocolo TLS:
   * **Encriptacion**: Oculta los datos que se transfieren a terceras partes.
   * **Autenticacion**: Garantiza que las partes que intercambian informacion sean quienes afirman ser.
   * **Integridad**: Verifica que los datos no han sido falsificados o alterados.
   * **Diferencias entre HTTPS y TLS**: HTTPS es una implementacion de la encriptacion TLS en el protocolo HTTP, usado por todos los sitios web asi como otros servicios web. Todos los sitios web que usan HTTPS emplean por tanto la encriptacion TLS.
+
+  ![](img/tls-ssl-handshake.webp)
+  
+  Un protocolo de enlace TLS es el proceso que inicia una sesion de comunicacion que utiliza TLS. Durante un protocolo de enlace TLS, las dos partes que se comunican intercambian mensajes para reconocerse y verificarse entre si, establecer los algoritmos de criptografia que utilizarán y acordar claves de sesion. Los protocolos de enlace TLS son una parte fundamental del funcionamiento de HTTPS. Este protocolo opera entre las capas 4 a 7 del modelo OSI.
+
 * **Hypertext Transfer Protocol Secure (HTTPS)**: El protocolo de transferencia de hipertexto seguro es la version segura de HTTP, que es el principal protocolo utilizado para enviar datos entre un navegador web y un sitio web. El HTTPS esta encriptado para aumentar la seguridad de las transferencias de datos. HTTPS utiliza un protocolo de encriptacion para encriptar las comunicaciones, el protocolo se conoce como TLS, este protocolo asegura las comunicaciones mediante el uso de lo que se conoce como **infraestructura de clave publica asimetrica**. Este tipo de sistema de seguridad utiliza dos claves diferentes para encriptar las comunicaciones entre dos partes:
   * **La clave privada**: Esta clave la controla el propietario de un sitio web y se mantiene privada. Esta clave esta ubicada en un servidor web que se utiliza para desencriptar la informacion encriptada por la clave publica.
   * **La clave publica**: Esta clave está disponible para todos los que quieran interactuar con el servidor de forma segura. La informacion encriptada por la clave publica solo puede ser desencriptada por la clave privada.
@@ -149,10 +159,16 @@ Los protocolos hacen posible estas funciones de red. Por ejemplo, el Protocolo d
   
   ![](img/http-request-headers.png)
 
-* **Quick UDP Internet Connections (QUIC)**:
+* **Quick UDP Internet Connections (QUIC)**: Es un nuevo **protocolo de transporte** de internet cifrado por defecto, que proporciona una serie de mejoras diseñadas para acelerar el trafico HTTP, asi como hacerlo mas seguro, con el objetivo previsto de sustituir a TCP y TLS. Fue diseñado para proveer seguridad equivalente a TLS/SSL, junto con latencia de conexion y de transporte reducidas, y estimacion de ancho de banda en cada direccion para evitar congestion. El principal objetivo de este protocolo es mejorar el rendimiento percibido de aplicaciones web orientadas a conexion que usan actualmente TCP.
+
+  Una de las caracteristicas principales de QUIC que lo diferencia del protocolo TCP es el objetivo de diseño declarado de proporcionar un protocolo de transporte seguro por defecto. QUIC logra esto proporcionando caracteristicas de seguridad, como autenticacion y encriptacion, que normalmente son manejadas por un protocolo (como TLS), desde el propio protocolo de transporte.
+
+  El handshake inicial de QUIC combina el tipico handshake de tres vias que se obtiene con TCP, con el handshake TLS, que proporciona autenticacion de los puntos finales asi como negociacion de parametros criptograficos. QUIC sustituye la capa de registro TLS por su propio formato, pero mantiene los mismos mensajes de enlace TLS.
+
+  Esto no solo garantiza que la conexion esté siempre autenticada y cifrada, sino que tambien hace que el establecimiento inicial de conexion sea mas rapido: el protocolo QUIC solo tarda un viaje de ida y vuelta (RTT) entre el cliente y el servidor en completarse, en comparacion con los dos viajes de ida y  vuelta necesarios para los protocolos TCP y TLS combinados.
 
 
-
+  ![](img/http-request-over-tcp-tls@2x.png) ![](img/http-request-over-quic@2x.png)
 
 # Links utiles
 
