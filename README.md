@@ -6,6 +6,7 @@ Indice de contenidos:
 - [Protocolos y modelo OSI](#protocolos-y-modelo-osi)
   - [Modelo OSI (Open System Interconnection)](#modelo-osi-open-system-interconnection)
   - [Protocolos mas importantes](#protocolos-mas-importantes)
+- [Comando `ping`](#comando-ping)
 - [Links utiles](#links-utiles)
 
 # Conceptos Importantes de Redes
@@ -135,7 +136,8 @@ Los protocolos hacen posible estas funciones de red. Por ejemplo, el Protocolo d
 
   ![](img/tcp-vs-udp.svg)
 
-* **Internet Control Message Protocol (ICMP)**: El protocolo de control de mensajes de internet es un protocolo en la **capa de red** que utilizan los dispositivos de red para diagnosticar problemas de comunicacion en la red. El ICMP se utiliza principalmente para determinar si los datos llegan o no a su destino a su debido tiempo. El protocolo ICMP se suele utilizar en dispositivos de red, como los enrutadores. El ICMP es crucial para informar de errores y realizar pruebas.
+* **Internet Control Message Protocol (ICMP)**: El protocolo de control de mensajes de internet es un protocolo en la **capa de red** que utilizan los dispositivos de red para diagnosticar problemas de comunicacion en la red. El ICMP se utiliza principalmente para determinar si los datos llegan o no a su destino a su debido tiempo. El protocolo ICMP se suele utilizar en dispositivos de red, como los enrutadores. El ICMP es crucial para informar de errores y realizar pruebas. Este protocolo es utilizado por el comando de linux `ping` para comprobar la conectividad de red entre host/servidor y host. 
+
 * **Secure Sockets Layer (SSL)**: Es un **protocolo de internet** basado en el cifrado (predecesor de TLS). 
   * Para ofrecer un alto grado de privacidad, SSL cifra los datos que se transmiten por la web.
   * SSL inicia un proceso de autenticacion, conocido como establecimiento de comunicacion, entre dos dispositivos que se comunican para garantizar que ambos sean lo que aparentan.
@@ -178,6 +180,10 @@ Los protocolos hacen posible estas funciones de red. Por ejemplo, el Protocolo d
 
   ![](img/http-request-over-tcp-tls@2x.png) ![](img/http-request-over-quic@2x.png)
 
+# Comando `ping`
+
+`ping` es un comando para sistemas operativos Linux que utiliza el protocolo ICMP para comprobar la conectividad de red entre host/servidor y host. Este toma una URL o direccion IP como input y envia un paquete de datos (`ECHO_REQUEST`) con el mensaje `PING`.
+
 # Links utiles
 
 [Cloudfare](https://www.cloudflare.com/es-es/learning/) sirve harto para aprender sobre la capa de red y protocolos :)
@@ -205,3 +211,7 @@ y [TCP](https://www.sdxcentral.com/resources/glossary/transmission-control-proto
 * [ICMP](https://www.cloudflare.com/es-es/learning/ddos/glossary/internet-control-message-protocol-icmp/)
 * [HTTP](https://www.cloudflare.com/es-es/learning/ddos/glossary/hypertext-transfer-protocol-http/)
 * [QUIC](https://blog.cloudflare.com/the-road-to-quic/) y [Como se trabaja con QUIC](https://blog.cloudflare.com/head-start-with-quic/)
+
+
+
+Como utilizar [**`ping`**](https://www.javatpoint.com/ping-command-in-linux).
