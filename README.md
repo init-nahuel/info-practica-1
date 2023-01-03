@@ -1,5 +1,13 @@
 **Este resumen son anotaciones obtenidas de diversas fuentes que detallan conceptos relacionados a redes.**
 
+Indice de contenidos:
+
+- [Conceptos Importantes de Redes](#conceptos-importantes-de-redes)
+- [Protocolos y modelo OSI](#protocolos-y-modelo-osi)
+  - [Modelo OSI (Open System Interconnection)](#modelo-osi-open-system-interconnection)
+  - [Protocolos mas importantes](#protocolos-mas-importantes)
+- [Links utiles](#links-utiles)
+
 # Conceptos Importantes de Redes
 
 * **Red**: Una red es un grupo de dos o mas computadores conectados. 
