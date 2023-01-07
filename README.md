@@ -177,6 +177,8 @@ Los protocolos hacen posible estas funciones de red. Por ejemplo, el Protocolo d
 
   Esto no solo garantiza que la conexion esté siempre autenticada y cifrada, sino que tambien hace que el establecimiento inicial de conexion sea mas rapido: el protocolo QUIC solo tarda un viaje de ida y vuelta (RTT) entre el cliente y el servidor en completarse, en comparacion con los dos viajes de ida y  vuelta necesarios para los protocolos TCP y TLS combinados.
 
+  * QUIC utiliza el servidor UDP en el puerto 443 en vez de TCP/443.
+
 
   ![](img/http-request-over-tcp-tls@2x.png) ![](img/http-request-over-quic@2x.png)
 
