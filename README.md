@@ -173,7 +173,7 @@ Los protocolos hacen posible estas funciones de red. Por ejemplo, el Protocolo d
 
   Una de las caracteristicas principales de QUIC que lo diferencia del protocolo TCP es el objetivo de diseño declarado de proporcionar un protocolo de transporte seguro por defecto. QUIC logra esto proporcionando caracteristicas de seguridad, como autenticacion y encriptacion, que normalmente son manejadas por un protocolo (como TLS), desde el propio protocolo de transporte.
 
-  El handshake inicial de QUIC combina el tipico handshake de tres vias que se obtiene con TCP, con el handshake TLS, que proporciona autenticacion de los puntos finales asi como negociacion de parametros criptograficos. QUIC sustituye la capa de registro TLS por su propio formato, pero mantiene los mismos mensajes de enlace TLS.
+  El handshake inicial de QUIC combina el tipico handshake de tres vias que se obtiene con TCP, con el handshake TLS, que proporciona autenticacion de los puntos finales asi como negociacion de parametros criptograficos, sin embargo cabe aclarar que QUIC al correr sobre UDP no requiere del handshake habitual que se realiza en TCP. QUIC sustituye la capa de registro TLS por su propio formato, pero mantiene los mismos mensajes de enlace TLS.
 
   Esto no solo garantiza que la conexion esté siempre autenticada y cifrada, sino que tambien hace que el establecimiento inicial de conexion sea mas rapido: el protocolo QUIC solo tarda un viaje de ida y vuelta (RTT) entre el cliente y el servidor en completarse, en comparacion con los dos viajes de ida y  vuelta necesarios para los protocolos TCP y TLS combinados.
 
