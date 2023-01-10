@@ -182,6 +182,8 @@ Los protocolos hacen posible estas funciones de red. Por ejemplo, el Protocolo d
 
   ![](img/http-request-over-tcp-tls@2x.png) ![](img/http-request-over-quic@2x.png)
 
+  * **Se comienza enviando los paquetes respectivos al handshake en TLS 1.3, finalizando con la peticion HTTP al servidor (HTTP/3), así la comunición queda totalmente establecida. Por otra parte, este handshake puede omitirse, es decir, la comunicacion entre cliente-servidor puede tardar 0 RTT, si previamente se habia establecido ya una comunicacion entre estos dos, sin embargo esta comunicacion debe haberse establecido recientemente.**
+
 # Comando `ping`
 
 `ping` es un comando para sistemas operativos Linux que utiliza el protocolo ICMP para comprobar la conectividad de red entre host/servidor y host. Este toma una URL o direccion IP como input y envia un paquete de datos (`ECHO_REQUEST`) con el mensaje `PING`.
